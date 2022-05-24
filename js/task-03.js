@@ -25,7 +25,7 @@ const makeGalleryList = ({ url, alt }) => {
 const galleryContainerEl = document.querySelector('.gallery');
 
 makeGalleryList(images);
-const galleryEl = images.map(makeGalleryList).join('');
+const galleryEl = images.map(item => makeGalleryList(item)).join('');
 
 galleryContainerEl.insertAdjacentHTML('beforeend', galleryEl);
 console.log(galleryContainerEl)
