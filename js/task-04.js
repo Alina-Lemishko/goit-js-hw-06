@@ -6,19 +6,7 @@ const refs = {
 
 let counterValue = 0;
 
-const addListenerDecBtn = refs.buttonDecrementEl.addEventListener('click', event => {
-  return updateDisplayDecrement();
-});
+const addListenerDecBtn = refs.buttonDecrementEl.addEventListener('click', () => refs.valueEl.innerHTML = counterValue-=1);
 
-const addListenerIncBtn = refs.buttonIncrementEl.addEventListener('click', event => {
-  return updateDisplayIncrement();
-});
-
-function updateDisplayIncrement(value) {
-    refs.valueEl.innerHTML = counterValue+=1;
-}
-
-function updateDisplayDecrement(value) {
-    refs.valueEl.innerHTML = counterValue-=1;
-}
+const addListenerIncBtn = refs.buttonIncrementEl.addEventListener('click', () => refs.valueEl.innerHTML = counterValue+=1);
 
