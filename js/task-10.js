@@ -17,9 +17,8 @@ refs.inputEl.addEventListener('input', event => {
 });
 
 refs.buttonCreateEl.addEventListener('click', () => createBoxes(quantityOfElements));
+
 refs.buttonDestroyEl.addEventListener('click', () => destroyBoxes());
-
-
 
 function createBoxes(amount) {
   let markupAsString = '';
