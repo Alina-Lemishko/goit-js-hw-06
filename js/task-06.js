@@ -12,6 +12,10 @@ function validate(event) {
     return;
   } 
   updateClass(event.currentTarget, 'valid', 'invalid');
+
+  if (event.currentTarget.value.length === 0) {
+    event.currentTarget.classList.remove('valid', 'invalid');
+  }
 }
 
 function updateClass(elem, add, remove) {
