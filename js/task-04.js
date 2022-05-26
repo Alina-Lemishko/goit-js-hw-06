@@ -8,9 +8,17 @@ const refs = {
 
 let counterValue = 0;
 
+function decrement() {
+  refs.valueEl.innerHTML = counterValue -= 1;
+}
+
+function increment() {
+  refs.valueEl.innerHTML = counterValue += 1;
+}
+
 // LISTENERS
 
-const addListenerDecBtn = refs.buttonDecrementEl.addEventListener('click', () => refs.valueEl.innerHTML = counterValue-=1);
+refs.buttonDecrementEl.addEventListener('click', decrement);
 
-const addListenerIncBtn = refs.buttonIncrementEl.addEventListener('click', () => refs.valueEl.innerHTML = counterValue+=1);
+refs.buttonIncrementEl.addEventListener('click', increment);
 

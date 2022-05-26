@@ -4,8 +4,6 @@ const refs = {
 }
 
 const addInputListener = refs.inputEl.addEventListener('input', event => {
-  refs.headingEl.textContent = event.currentTarget.value;
-  if (refs.inputEl.value.length === 0) {
-   refs.headingEl.textContent = 'Anonymous';
-  }
+  const value = event.target.value.trim()
+  refs.headingEl.textContent = value ? value : 'Anonymous';
 })
