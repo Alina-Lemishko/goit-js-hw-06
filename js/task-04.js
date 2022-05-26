@@ -1,3 +1,5 @@
+// VARIABLES
+
 const refs = {
   buttonDecrementEl: document.querySelector('button[data-action="decrement"]'),
   buttonIncrementEl: document.querySelector('button[data-action="increment"]'),
@@ -5,6 +7,8 @@ const refs = {
 };
 
 let counterValue = 0;
+
+// LISTENERS
 
 const addListenerDecBtn = refs.buttonDecrementEl.addEventListener('click', () => refs.valueEl.innerHTML = counterValue-=1);
 
