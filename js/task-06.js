@@ -5,13 +5,17 @@ const inputValue = inputEl.getAttribute('data-length')
 const addInputEventListener = inputEl.addEventListener('blur', validate)
 
 function validate(event) {
-  const isCorrectLength = event.currentTarget.value.length === Number(inputValue);
-
-  inputEl.classList.add('invalid');
-
+  const isCorrectLength = event.currentTarget.value.trim().length === Number(inputValue);
+  
   if (isCorrectLength) {
-    inputEl.classList.remove('invalid');
-    inputEl.classList.add('valid');
+    updateClass(event.currentTarget, 'invalid', 'valid') 
+    return;
   } 
+  updateClass(event.currentTarget, 'valid', 'invalid');
+}
+
+function updateClass(elem, add, remove) {
+  elem.classList.remove(add);
+    elem.classList.add(remove);
 }
 
